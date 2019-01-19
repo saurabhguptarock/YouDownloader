@@ -29,6 +29,8 @@
   "dependencies": {
     "electron-is-dev": "^1.0.1",
     "electron-updater": "^4.0.6",
-    "sweetalert2": "^8.0.1"
+    "materialize-css": "^1.0.0",
+    "sweetalert2": "^8.0.1",
+    "youtube-dl": "^1.12.2"
   }
 }
