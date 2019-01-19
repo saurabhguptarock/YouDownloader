@@ -24,5 +24,10 @@
   "homepage": "https://github.com/saurabhguptarock/YouDownloader#readme",
   "devDependencies": {
     "electron": "^4.0.1"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.0.1",
+    "electron-updater": "^4.0.6",
+    "sweetalert2": "^8.0.1"
   }
 }
