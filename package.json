@@ -1,0 +1,28 @@
+{
+  "name": "youdownloader",
+  "version": "1.0.0",
+  "description": "youtube video downloader",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabhguptarock/YouDownloader.git"
+  },
+  "keywords": [
+    "youtube",
+    "download",
+    "video",
+    "downloader"
+  ],
+  "author": "Saurabh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saurabhguptarock/YouDownloader/issues"
+  },
+  "homepage": "https://github.com/saurabhguptarock/YouDownloader#readme",
+  "devDependencies": {
+    "electron": "^4.0.1"
+  }
+}
