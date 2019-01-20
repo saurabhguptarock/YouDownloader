@@ -4,7 +4,7 @@ const url = require("url");
 const isDev = require("electron-is-dev");
 const { autoUpdater } = require("electron-updater");
 const { app, BrowserWindow, Menu, Tray, ipcMain, dialog } = electron;
-
+const log = require("electron-log");
 const iconPath = path.join(__dirname, "./app/images/icons/win/logo.ico");
 let mainWindow,
   tray = null;
@@ -14,6 +14,9 @@ var info = {
   date: "18-12-2018 21:25 PM",
   electronVersion: "4.0.1"
 };
+
+autoUpdater.logger = log;
+autoUpdater.logger.transports.file.level = "info";
 
 // Check for Update
 autoUpdater.on("checking-for-update", () => {
