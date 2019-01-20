@@ -4,7 +4,37 @@
   "description": "youtube video downloader",
   "main": "app.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "installer": "build -p always"
+  },
+  "build": {
+    "appId": "com.saverl.youdownloader",
+    "productName": "YouDownloader",
+    "copyright": "Copyright © year 2019 ${author}",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "./app/images/icons/win/logo.ico"
+    },
+    "nsis": {
+      "installerIcon": "./app/images/icons/win/logo.ico",
+      "uninstallerIcon": "./app/images/icons/win/logo.ico",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "uninstallDisplayName": "${productName} ${version}",
+      "packElevateHelper": true,
+      "unicode": true,
+      "license": "./app/license"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "saurabhguptarock",
+        "repo": "YouDownloader"
+      }
+    ]
   },
   "repository": {
     "type": "git",
@@ -16,8 +46,8 @@
     "video",
     "downloader"
   ],
-  "author": "Saurabh",
-  "license": "ISC",
+  "author": "Saverl Inc.",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/saurabhguptarock/YouDownloader/issues"
   },
