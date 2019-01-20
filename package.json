@@ -55,7 +55,8 @@
   "homepage": "https://github.com/saurabhguptarock/YouDownloader#readme",
   "devDependencies": {
     "electron": "^4.0.1",
-    "electron-builder": "^20.38.5"
+    "electron-builder": "^20.38.5",
+    "electron-reload": "^1.4.0"
   },
   "dependencies": {
     "animate.css": "^3.7.0",

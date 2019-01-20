@@ -17,6 +17,9 @@ var info = {
 
 autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = "info";
+require("electron-reload")(__dirname, {
+  electron: require(`${__dirname}/node_modules/electron`)
+});
 
 // Check for Update
 autoUpdater.on("checking-for-update", () => {
