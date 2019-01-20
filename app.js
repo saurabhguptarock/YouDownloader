@@ -3,7 +3,7 @@ const path = require("path");
 const url = require("url");
 const isDev = require("electron-is-dev");
 const { autoUpdater } = require("electron-updater");
-const { app, BrowserWindow, Menu, Tray, ipcMain, dialog } = electron;
+const { app, BrowserWindow, Menu, Tray, dialog } = electron;
 const log = require("electron-log");
 const iconPath = path.join(__dirname, "./app/images/icons/win/logo.ico");
 let mainWindow,

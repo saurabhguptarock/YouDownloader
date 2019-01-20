@@ -4,14 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Youtube</title>
     <link
       rel="stylesheet"
       href="../node_modules/materialize-css/dist/css/materialize.min.css"
     />
+    <link rel="stylesheet" href="../node_modules/animate.css/animate.min.css" />
+    <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/icons.css" />
   </head>
   <body>
+    <div class="container" id="cont">
+      <div id="inputs">
+        <form id="form" class="input-field animated slideInDown">
+          <input id="url" type="url" class="validate" />
+          <label for="url">Full Youtube Url</label>
+        </form>
+        <button
+          id="download"
+          class="btn waves-effect waves-light disabled animated slideInLeft"
+          type="submit"
+        >
+          Download
+        </button>
+      </div>
+      <iframe
+        width="560"
+        height="315"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        class="hiddendiv"
+        id="frame"
+      ></iframe>
+    </div>
+    <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
