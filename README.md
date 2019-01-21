@@ -56,4 +56,4 @@ npm run test
 
 YouDownloader is free and without any ads. If you appreciate that, please consider donating to the Developer.
 
-[![Donate](https://raw.githubusercontent.com/FaisalUmair/udemy-downloader-gui/master/app/images/donate.png)](https://www.paypal.me/saurabhguptasaverl)
+[![Donate](https://raw.githubusercontent.com/saurabhguptarock/YouDownloader/master/app/images/donate.png)](https://www.paypal.me/saurabhguptasaverl)
