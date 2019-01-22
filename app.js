@@ -108,7 +108,7 @@ function createWindow() {
     }
   });
   // Menu End
-  if (isDev) mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 }
 
 app.on("ready", () => {

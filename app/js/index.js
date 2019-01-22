@@ -49,13 +49,15 @@ function values(i) {
   var video = youtubedl(
     `http://www.youtube.com/watch?v=${str}`,
     ["--format=18"],
-    { cwd: __dirname }
+    { cwd: __dirname.split("\\")[-1] }
   );
+  console.log(__dirname.split("\\")[1]);
+
   video.on("info", function(info) {
     name = info._filename;
     Swal.fire(
       "Download started",
-      `FileName: ${name} Size: ${info.size / 1000000} MB`
+      `FileName: ${name} and Size: ${info.size / 1000000} MB`
     );
   });
   video.pipe(fs.createWriteStream(`${name}`));
