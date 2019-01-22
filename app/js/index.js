@@ -1,5 +1,8 @@
-const electron = require("electron");
-const { ipcRenderer } = electron;
+const fs = require("fs");
+var name;
+const youtubedl = require("youtube-dl");
+let str;
+
 $("#url").each(function() {
   var elem = $(this);
   elem.data("oldVal", elem.val());
@@ -13,8 +16,6 @@ $("#url").each(function() {
     }
   });
 });
-
-// const Swal = require("sweetalert2");
 $("#download").click(() => {
   var url = document.getElementById("url");
   str = url.value;
@@ -28,7 +29,6 @@ $("#download").click(() => {
   document.getElementById("frame").classList.add("slideInLeft");
   document.getElementById("quality").classList.add("animated");
   document.getElementById("quality").classList.add("slideInRight");
-  // ipcRenderer.send("yurl", str);
 });
 $("#form").submit(e => {
   e.preventDefault();
@@ -44,5 +44,19 @@ $("#form").submit(e => {
   document.getElementById("frame").classList.add("slideInLeft");
   document.getElementById("quality").classList.add("animated");
   document.getElementById("quality").classList.add("slideInRight");
-  // ipcRenderer.send("yurl", str);
 });
+function values(i) {
+  var video = youtubedl(
+    `http://www.youtube.com/watch?v=${str}`,
+    ["--format=18"],
+    { cwd: __dirname }
+  );
+  video.on("info", function(info) {
+    name = info._filename;
+    Swal.fire(
+      "Download started",
+      `FileName: ${name} Size: ${info.size / 1000000} MB`
+    );
+  });
+  video.pipe(fs.createWriteStream(`${name}`));
+}

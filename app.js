@@ -3,10 +3,8 @@ const path = require("path");
 const url = require("url");
 const isDev = require("electron-is-dev");
 const { autoUpdater } = require("electron-updater");
-const { app, BrowserWindow, Menu, Tray, dialog, ipcMain } = electron;
+const { app, BrowserWindow, Menu, Tray, dialog } = electron;
 const log = require("electron-log");
-const fs = require("fs");
-const youtubedl = require("youtube-dl");
 const iconPath = path.join(__dirname, "./app/images/icons/win/logo.ico");
 let mainWindow,
   tray = null;
@@ -25,21 +23,6 @@ if (isDev) {
   });
 }
 
-ipcMain.on("yurl", (e, url) => {
-  // var video = youtubedl(
-  //   `http://www.youtube.com/watch?v=${url}`,
-  //   ["--format=18"],
-  //   { cwd: __dirname }
-  // );
-  // video.on("info", function(info) {
-  //   console.log("Download started");
-  //   console.log("filename: " + info._filename);
-  //   console.log("size: " + info.size);
-  // });
-  console.log(url);
-
-  // video.pipe(fs.createWriteStream("myvideo.mp4"));
-});
 // Check for Update
 autoUpdater.on("checking-for-update", () => {
   dialog.showMessageBox({
@@ -137,6 +120,7 @@ app.on("window-all-closed", () => {
     app.quit();
   }
 });
+// todo make Settings
 function settings() {}
 
 function showAbout() {
