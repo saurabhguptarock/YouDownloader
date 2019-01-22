@@ -28,19 +28,38 @@
           Download
         </button>
       </div>
-      <iframe
-        width="560"
-        height="315"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        class="hiddendiv"
-        id="frame"
-      ></iframe>
+      <div id="hidden" class="hiddendiv">
+        <iframe
+          width="560"
+          height="315"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          id="frame"
+        ></iframe>
+        <div id="quality" style="float: right;">
+          <div class="input-field col s12">
+            <select>
+              <option value="1">240p</option>
+              <option value="2">360p</option>
+              <option value="3">480p</option>
+              <option value="4">720p</option>
+              <option value="5">1080p</option>
+            </select>
+            <label>Select Quality</label>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="./js/index.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var elems = document.querySelectorAll("select");
+        var instances = M.FormSelect.init(elems, {});
+      });
+    </script>
   </body>
 </html>

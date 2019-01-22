@@ -1,3 +1,5 @@
+const electron = require("electron");
+const { ipcRenderer } = electron;
 $("#url").each(function() {
   var elem = $(this);
   elem.data("oldVal", elem.val());
@@ -21,9 +23,12 @@ $("#download").click(() => {
   document
     .getElementsByTagName("iframe")
     .item(0).src = `https://www.youtube.com/embed/${str}`;
-  document.getElementById("frame").classList.remove("hiddendiv");
+  document.getElementById("hidden").classList.remove("hiddendiv");
   document.getElementById("frame").classList.add("animated");
   document.getElementById("frame").classList.add("slideInLeft");
+  document.getElementById("quality").classList.add("animated");
+  document.getElementById("quality").classList.add("slideInRight");
+  // ipcRenderer.send("yurl", str);
 });
 $("#form").submit(e => {
   e.preventDefault();
@@ -34,7 +39,10 @@ $("#form").submit(e => {
   document
     .getElementsByTagName("iframe")
     .item(0).src = `https://www.youtube.com/embed/${str}`;
-  document.getElementById("frame").classList.remove("hiddendiv");
+  document.getElementById("hidden").classList.remove("hiddendiv");
   document.getElementById("frame").classList.add("animated");
   document.getElementById("frame").classList.add("slideInLeft");
+  document.getElementById("quality").classList.add("animated");
+  document.getElementById("quality").classList.add("slideInRight");
+  // ipcRenderer.send("yurl", str);
 });
